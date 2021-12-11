@@ -20,7 +20,7 @@ public class BrailleToKorTranslator{
     ]
 
     // 전체 문장 번역
-    class func brailleToKorText(_ input: String) -> String{
+    public class func brailleToKorText(_ input: String) -> String{
         var result = ""
         let startTime = CFAbsoluteTimeGetCurrent()
         // 점자 빈칸, 그냥 빈칸
@@ -44,7 +44,7 @@ public class BrailleToKorTranslator{
         return result
     }
     
-    class func isBraille(_ input: String) -> Bool{
+    public class func isBraille(_ input: String) -> Bool{
 
         for i in input.utf16{
             if i >= 10240 && i <= 10303{
@@ -59,7 +59,7 @@ public class BrailleToKorTranslator{
     }
     
     // 끊은 '단어' 점자를 한글로 바꾸는 역할
-    class func brailleTosyllable(_ word: String) -> String{
+    public class func brailleTosyllable(_ word: String) -> String{
         
         var brailleWord = word // brailleWord로 번역을 함
         
@@ -430,7 +430,7 @@ public class BrailleToKorTranslator{
     }
     
 //MARK: - COMBINATION
-    class func JamoCombination(c1:Character,c2:Character,c3:Character) -> Character? {
+    public class func JamoCombination(c1:Character,c2:Character,c3:Character) -> Character? {
             var cho_i = 0
             var jung_i = 0
             var jong_i = 0
