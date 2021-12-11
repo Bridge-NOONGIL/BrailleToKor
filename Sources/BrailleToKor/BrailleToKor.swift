@@ -7,6 +7,8 @@
 import Foundation
 
 public class BrailleToKorTranslator{
+    public init() {}
+    
     static let CHO:[Character] = ["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"]
 
     static let JUNG:[Character] = ["ㅏ", "ㅐ", "ㅑ", "ㅒ", "ㅓ", "ㅔ", "ㅕ", "ㅖ", "ㅗ", "ㅘ", "ㅙ", "ㅚ", "ㅛ", "ㅜ", "ㅝ", "ㅞ", "ㅟ", "ㅠ", "ㅡ", "ㅢ", "ㅣ"]
@@ -44,7 +46,7 @@ public class BrailleToKorTranslator{
         return result
     }
     
-    public class func isBraille(_ input: String) -> Bool{
+    private class func isBraille(_ input: String) -> Bool{
 
         for i in input.utf16{
             if i >= 10240 && i <= 10303{
@@ -59,7 +61,7 @@ public class BrailleToKorTranslator{
     }
     
     // 끊은 '단어' 점자를 한글로 바꾸는 역할
-    public class func brailleTosyllable(_ word: String) -> String{
+    private class func brailleTosyllable(_ word: String) -> String{
         
         var brailleWord = word // brailleWord로 번역을 함
         
@@ -430,7 +432,7 @@ public class BrailleToKorTranslator{
     }
     
 //MARK: - COMBINATION
-    public class func JamoCombination(c1:Character,c2:Character,c3:Character) -> Character? {
+    private class func JamoCombination(c1:Character,c2:Character,c3:Character) -> Character? {
             var cho_i = 0
             var jung_i = 0
             var jong_i = 0
