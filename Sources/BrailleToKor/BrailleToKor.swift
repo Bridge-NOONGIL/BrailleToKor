@@ -6,7 +6,7 @@
 //}
 import Foundation
 
-public class BrailleToKorTranslator{
+public class BrailleToKor{
     public init() {}
     
     static let CHO:[Character] = ["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"]
@@ -22,7 +22,7 @@ public class BrailleToKorTranslator{
     ]
 
     // 전체 문장 번역
-    public class func brailleToKorText(_ input: String) -> String{
+    public class func translation(_ input: String) -> String{
         var result = ""
         let startTime = CFAbsoluteTimeGetCurrent()
         // 점자 빈칸, 그냥 빈칸
