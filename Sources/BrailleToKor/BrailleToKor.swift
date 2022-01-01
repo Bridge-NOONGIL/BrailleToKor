@@ -345,10 +345,11 @@ public class BrailleToKor{
                     
                     continue
                 }
-
-                else {
+                else if cho_braille[letter] != nil{
                     cho = cho_braille[letter]!
                     selectedCho = true
+                }else{
+                    continue
                 }
             }
             
