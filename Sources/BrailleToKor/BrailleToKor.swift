@@ -226,7 +226,7 @@ public class BrailleToKor{
                     selectedJong = true
                     
                     if jong_braille[letter_back] != nil { //letter_back이 종성일때 => 겹받침
-                        jong = double_jong_braille[jong+letter_back]!
+                        jong = double_jong_braille[jong+letter_back] ?? ""
                         continue
                     }
                 }
@@ -315,8 +315,8 @@ public class BrailleToKor{
                     
                     else if abb_cho_list[letter_back] != nil{ // 까, 싸 - letter_back이 가, 사 일 때
                         
-                        cho = abb_cho_list[letter+letter_back]![0]
-                        jung = abb_cho_list[letter+letter_back]![1]
+                        cho = abb_cho_list[letter+letter_back]?[0] ?? ""
+                        jung = abb_cho_list[letter+letter_back]?[1] ?? ""
                         
                         selectedCho = true
                         selectedJung = true
@@ -334,12 +334,12 @@ public class BrailleToKor{
                     }
 
                     else if cho_braille[letter_back] == nil{ // 된소리가 아니라 'ㅅ'일 때
-                        cho = cho_braille[letter]!
+                        cho = cho_braille[letter] ?? ""
                         selectedCho = true
                     }
 
                     else if cho_braille["\(letter_back)"] != nil{ // 된소리 + 초성
-                        cho = double_cho_braille[letter + letter_back]!
+                        cho = double_cho_braille[letter + letter_back] ?? ""
                         selectedCho = true
                     }
                     
