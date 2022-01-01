@@ -24,7 +24,12 @@ func translatePunc(words: [String]) -> [String] {
 
 func translateFirstPunc(_ word: [Character]) -> [Character] {
     var resultWorld = word
-    let firstWord = String(word[0])
+    var firstWord = ""
+    if word.count == 0 {
+        firstWord = ""
+    } else {
+        firstWord = String(word[0])
+    }
     var secondWord = " "
     
     if word.count > 1 { secondWord = String(word[1])}
