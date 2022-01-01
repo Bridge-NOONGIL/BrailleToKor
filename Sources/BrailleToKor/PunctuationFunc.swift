@@ -101,6 +101,12 @@ func translateLastPunc(_ word: [Character]) -> [Character] {
         resultWord[word_count-3] = "."
         
     }
+    else if end_punctuation_list[lastWord] == "\"" || end_punctuation_list[lastWord] == "'" {
+        if end_punctuation_list[front_word] == "." || end_punctuation_list[front_word] == "," {
+            let punctuation = end_punctuation_list[front_word]!
+            resultWord[resultWord.count-1] = Character(punctuation)
+        }
+    }
     else if end_punctuation_list[front_word + lastWord] != nil {
         
         let punctuation = end_punctuation_list[front_word + lastWord]!
