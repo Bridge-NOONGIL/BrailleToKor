@@ -295,7 +295,7 @@ public class BrailleToKor{
                 else if letter == "⠠" { //6점(된소리)
                     //'ㅏ' 약자(까, 싸 제외)
                     if abb_cho_braille[letter_back] != nil && ((cho_braille[letter_back_back] != nil || jong_braille[letter_back_back] != nil || i+1 == last || letter_back_back == "⠫" || letter_back_back == "⠇") || !letter_back_back_isBraille) {
-                        cho = cho_braille[letter+letter_back]!
+                        cho = cho_braille[letter+letter_back] ?? " "
                         jung = "ㅏ"
                         selectedCho = true
                         selectedJung = true
