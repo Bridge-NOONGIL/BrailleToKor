@@ -38,10 +38,12 @@ func translateFirstPunc(_ word: [Character]) -> [Character] {
         
         let punctuation = front_punctuation_list[firstWord + secondWord]!
         let _ = resultWorld.remove(at: 0) //하나를 지우고
-        resultWorld[0] = Character(punctuation) //하나는 변경해주고
         
-        if front_punctuation_list[firstWord + secondWord] == " " {
+        if front_punctuation_list[firstWord + secondWord] == " " { //점역자 주
+            resultWorld.remove(at: 0)
             resultWorld = translateFirstPunc(resultWorld)
+        } else {
+            resultWorld[0] = Character(punctuation) //하나는 변경해주고
         }
         
     }else if front_punctuation_list[firstWord] != nil{
@@ -122,10 +124,12 @@ func translateLastPunc(_ word: [Character]) -> [Character] {
         
         let punctuation = end_punctuation_list[front_word + lastWord]!
         resultWord.remove(at: word_count-1)
-        resultWord[resultWord.count-1] = Character(punctuation)
         
         if end_punctuation_list[front_word + lastWord] == " " { //점역자 주
+            resultWord.remove(at: word_count-2)
             resultWord = translateLastPunc(resultWord)
+        } else {
+            resultWord[resultWord.count-1] = Character(punctuation)
         }
     }
     else if end_punctuation_list[lastWord] != nil {
