@@ -98,6 +98,10 @@ func translateLastPunc(_ word: [Character]) -> [Character] {
     var resultWord = word
     let word_count = word.count
     
+    if word_count == 0 {
+        return resultWord
+    }
+    
     let lastWord = String(word[word_count-1])
     var front_word = " "
     var front_front_word = " "
