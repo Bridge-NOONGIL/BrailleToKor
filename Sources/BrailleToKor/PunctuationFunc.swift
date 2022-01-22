@@ -119,6 +119,10 @@ func translateLastPunc(_ word: [Character]) -> [Character] {
         let punctuation = end_punctuation_list[front_word + lastWord]!
         resultWord.remove(at: word_count-1)
         resultWord[resultWord.count-1] = Character(punctuation)
+        
+        if end_punctuation_list[front_word + lastWord] == "" { //번역자 주
+            resultWord = translateLastPunc(resultWord)
+        }
     }
     else if end_punctuation_list[lastWord] != nil {
         
