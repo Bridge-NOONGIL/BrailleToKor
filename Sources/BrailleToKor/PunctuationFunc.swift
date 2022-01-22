@@ -40,6 +40,10 @@ func translateFirstPunc(_ word: [Character]) -> [Character] {
         let _ = resultWorld.remove(at: 0) //하나를 지우고
         resultWorld[0] = Character(punctuation) //하나는 변경해주고
         
+        if front_punctuation_list[firstWord + secondWord] == "" {
+            resultWorld = translateFirstPunc(resultWorld)
+        }
+        
     }else if front_punctuation_list[firstWord] != nil{
         let punctuation = front_punctuation_list[firstWord]!
         resultWorld[0] = Character(punctuation)
