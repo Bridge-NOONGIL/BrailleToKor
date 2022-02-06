@@ -38,11 +38,23 @@ public class BrailleToKor{
 //        print(components)
         for word in punctuationTranslatedWords{
 //            let numberTranslateWords = translateNumber(text: word)
-            result += brailleTosyllable(word)
+//            print(word)
+            var replacedWord = word // 옹옹 처리 !!!
+            var replaceFlag = false
+            if word.contains("⠿⠿"){
+                replacedWord = word.replacingOccurrences(of: "⠿⠿", with: "")
+                replaceFlag = true
+            }
+            if replaceFlag{
+                replacedWord = word.replacingOccurrences(of: "⠿", with: "")
+                replaceFlag = false
+            }
+            
+            result += brailleTosyllable(replacedWord)
             result += " "
         }
         let durationTime = CFAbsoluteTimeGetCurrent() - startTime
-        print(durationTime)
+//        print(durationTime)
         return result
     }
     

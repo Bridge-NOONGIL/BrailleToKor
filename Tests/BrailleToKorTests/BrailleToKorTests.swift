@@ -6,6 +6,8 @@ final class BrailleToKorTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(BrailleToKor().text, "Hello, World!")
+//        XCTAssertEqual(BrailleToKor.translation("abc"), "Hello, World!")
+        print(BrailleToKor.translation("⠉⠝⠄⠠⠨⠗ ⠚⠧⠠⠻⠕⠤⠌⠬ ⠚⠧⠠⠻⠿⠿⠿⠵ ⠿⠿⠿"))
+        
     }
 }
