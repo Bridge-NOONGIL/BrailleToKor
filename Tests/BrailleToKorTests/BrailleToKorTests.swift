@@ -7,7 +7,7 @@ final class BrailleToKorTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
 //        XCTAssertEqual(BrailleToKor.translation("abc"), "Hello, World!")
-        print(BrailleToKor.translation("⠉⠝⠄⠠⠨⠗ ⠚⠧⠠⠻⠕⠤⠌⠬ ⠚⠧⠠⠻⠿⠿⠿⠵ ⠿⠿⠿"))
+        print(BrailleToKor.translation("⠉⠝⠄⠠⠨⠗ ⠚⠧⠠⠻⠕⠤⠌⠬ ⠚⠧⠠⠻⠿⠿⠿⠵ ⠿⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠿"))
         
     }
 }

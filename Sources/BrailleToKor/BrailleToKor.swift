@@ -39,16 +39,29 @@ public class BrailleToKor{
         for word in punctuationTranslatedWords{
 //            let numberTranslateWords = translateNumber(text: word)
 //            print(word)
-            var replacedWord = word // 옹옹 처리 !!!
-            var replaceFlag = false
-            if word.contains("⠿⠿"){
-                replacedWord = word.replacingOccurrences(of: "⠿⠿", with: "")
-                replaceFlag = true
+            var replacedWord = word
+            var replace123456Flag = false // 옹옹 처리!
+            var replace1245Flag = false // 운운 처리!
+            
+            if word.contains("⠛⠛"){
+                replacedWord = word.replacingOccurrences(of: "⠛⠛", with: "")
+                replace1245Flag = true
             }
-            if replaceFlag{
-                replacedWord = word.replacingOccurrences(of: "⠿", with: "")
-                replaceFlag = false
+            if replace1245Flag{
+                replacedWord = replacedWord.replacingOccurrences(of: "⠛", with: "")
+                replace1245Flag = false
             }
+
+            
+            if replacedWord.contains("⠿⠿"){
+                replacedWord = replacedWord.replacingOccurrences(of: "⠿⠿", with: "")
+                replace123456Flag = true
+            }
+            if replace123456Flag{
+                replacedWord = replacedWord.replacingOccurrences(of: "⠿", with: "")
+                replace123456Flag = false
+            }
+            
             
             result += brailleTosyllable(replacedWord)
             result += " "
